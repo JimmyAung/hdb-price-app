@@ -39,7 +39,6 @@ with st.form("price_form"):
     years_of_lease_left = st.number_input("Years of lease left", 0, 99, 70, 1)
     mall_within_2km = st.number_input("Number of malls within 2km", 0, 45, 5, 1)
     Hawker_within_2km = st.number_input("Number of hawker centres within 2km", 0, 25, 3, 1)
-    primary_school_vacancy = st.number_input("Number of vacancy in nearest primary school", 0, 120, 10, 1)
     mrt_interchange = st.checkbox("Near MRT interchange?", value=False)
     mrt_nearest_distance = st.number_input("MRT distance (meters)", 0, 4000, 800, 10)
     commercial = st.checkbox("Commercial present in the block (shops/offices)?", value=False)
