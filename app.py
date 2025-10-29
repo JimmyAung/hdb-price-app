@@ -1,7 +1,10 @@
 # app.py
 import streamlit as st
 
-# --- NEW: optional model loader (safe if file not present) ---
+st.set_page_config(page_title="HDB Price Predictor", layout="centered")
+
+import pandas as pd
+from joblib import load
 import os
 import joblib
 
@@ -13,7 +16,7 @@ def load_model():
         try:
             return joblib.load(path)
         except Exception as e:
-            st.warning(f"Found model.pkl but failed to load it: {e}")
+            print(f"Found model.pkl but failed to load it: {e}")
             return None
     return None
 
@@ -21,8 +24,6 @@ model = load_model()
 
 
 
-
-st.set_page_config(page_title="HDB Price Predictor", layout="centered")
 st.title("🏠 Singapore HDB Resale Price — Interactive Model")
 
 # Show whether we're using dummy or real model
